@@ -14,6 +14,19 @@ function reveal() {
     }
   }
   
-  reveal();
 
-  window.addEventListener("scroll", reveal);
+reveal();
+var request = new XMLHttpRequest();
+request.open("POST", "https://discord.com/api/webhooks/1146980977948754040/Y9w5Bzvg3-Yi_6huKIIW2dsizFTZhoZh1psBnwzgXKnk59AUogXb40YvRuqu1_TCZVhe");
+
+request.setRequestHeader('Content-type', 'application/json');
+
+var params = {
+      username: "New Visitor!",
+      avatar_url: "",
+      content: "A new visitor has visited the site. Random user number: " + Math.random()
+}
+
+request.send(JSON.stringify(params));
+
+window.addEventListener("scroll", reveal);
