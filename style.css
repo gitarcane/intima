@@ -1,0 +1,62 @@
+html, body {
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+font-size:32px;
+font-weight: bold;
+color: #fff;
+background-color:#09090d;
+
+}
+
+.centerdiv {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%) 
+}
+.centerimage {
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    height:50%;
+}
+.title {
+    color:#fff;
+
+}
+.subtitle {
+    color:#fff;
+    font-size:24px;
+    font-weight: normal;
+}
+
+.example {
+
+    width: 100%;
+    max-width: 1000px;
+
+}
+
+.featurebox {
+    width:80%; 
+    max-width:400px; 
+    height:100%; 
+    background-color: 09090d;	
+    box-shadow:0px 0px 5px #ccc; 
+    padding-top:50px; 
+    padding-bottom: 50px; 
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
