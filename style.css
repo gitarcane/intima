@@ -1,10 +1,34 @@
 html, body {
-font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+font-family: Helvetica;
 font-size:32px;
 font-weight: bold;
 color: #fff;
 background-color:#09090d;
+scroll-behavior: smooth;
+overflow-x: hidden; /* Hide horizontal scrollbar */
 
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,255,255,0.1); 
 }
 
 .centerdiv {
@@ -28,6 +52,8 @@ background-color:#09090d;
     font-size:24px;
     font-weight: normal;
 }
+
+
 
 .example {
 
@@ -59,4 +85,88 @@ background-color:#09090d;
   .reveal.active{
     transform: translateY(0);
     opacity: 1;
+  }
+
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container p {
+    font-size: 3rem;
+    padding: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  span.typed-text {
+    color: #433add;
+    
+  }
+  .cursor {
+    display: inline-block;
+    background-color: #fff;
+    margin-left: 0.3rem;
+    width: 10px;
+    animation: blink 1s infinite;
+  }
+  .cursor.typing {
+    animation: none;
+  }
+  @keyframes blink {
+    0%  { background-color: #fff; }
+    49% { background-color: #fff; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #fff; }
+  }
+  /* Create three equal columns that floats next to each other */
+  
+.column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    max-width:500px; 
+    height:600px;
+    padding-top:50px; 
+    padding-bottom: 50px; 
+    border-radius: 25px;
+    margin: 10px;
+    background-color:rgb(24, 24, 30, 0.8);
+    border-radius: 25px;
+    border: 2px solid #121212;
+  }
+
+.cont {
+    position: relative;
+    left: 50%;
+    transform: translate(-42.5%);
+  }
+
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    
+  }
+
+  :root {
+    --borderWidth: 8px;
+    --height: 20px;
+    --width: 8px;
+    --borderColor: #34A853;
+  }
+
+
+  .check {
+    display: inline-block;
+    transform: rotate(45deg);
+    height: var(--height);
+    width: var(--width);
+    border-bottom: var(--borderWidth) solid var(--borderColor);
+    border-right: var(--borderWidth) solid var(--borderColor);
   }

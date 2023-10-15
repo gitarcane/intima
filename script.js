@@ -16,17 +16,50 @@ function reveal() {
   
 
 reveal();
-var request = new XMLHttpRequest();
-request.open("POST", "https://discord.com/api/webhooks/1146980977948754040/Y9w5Bzvg3-Yi_6huKIIW2dsizFTZhoZh1psBnwzgXKnk59AUogXb40YvRuqu1_TCZVhe");
+const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
 
-request.setRequestHeader('Content-type', 'application/json');
+const textArray = ["Most Secure", "Most Affordable", "Most Exclusive"];
+const typingDelay = 100;
+const erasingDelay = 100;
+const newTextDelay = 400; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
 
-var params = {
-      username: "New Visitor!",
-      avatar_url: "",
-      content: "A new visitor has visited the site. Random user number: " + Math.random()
+
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
 }
 
-request.send(JSON.stringify(params));
+function erase() {
+	if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+erase()
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
 
 window.addEventListener("scroll", reveal);

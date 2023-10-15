@@ -1,0 +1,10 @@
+<div class="featurebox reveal">
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="34" viewBox="0 0 37 34" fill="none">
+<path d="M0 30.4211H37V34H0V30.4211ZM0 5.36842L9.25 11.6316L18.5 0L27.75 11.6316L37 5.36842V26.8421H0V5.36842ZM3.7 12.2418V23.2632H33.3V12.2418L26.973 16.5258L18.5 5.86947L10.027 16.5258L3.7 12.2418Z" fill="white"></path>
+</svg>
+
+<br>
+<a class="subtitle" style="font-weight:bold;">High Satisification</a>
+<br>
+<a class="subtitle"> With over 600+ satisfied customers, <br> Intima stands as the top-rated content provider worldwide.</a>
+</div>

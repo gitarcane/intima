@@ -19,14 +19,15 @@
   }
   
   
+  
   .btn--promo {
     color: #fff;
-    background-color: #6225E6;
+    background-color: #433add;
     border-radius: 50px;
   }
   
   .btn--promo:after {
-    content: '50% OFF';
+    content: 'FOR FREE';
     display: inline-block;
     font-size: 15px;
     color: #fff;
@@ -37,6 +38,49 @@
     margin-top: -25px; 
     margin-left: -40px; 
   }
-  
+
+  .btn--promo:hover {
+    background-color:transparent;
+    box-shadow: 0px 0px 10px #4f46ed;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
 
   
+  .headerbtn {
+    color: #fff;
+    background-color:transparent;
+    border-radius: 20px;
+    border: 2px solid #433add;
+    font-size: 15px;
+    width: 80px;
+    color: #433add;
+    transition: all .2s ease-in-out; 
+    margin-right: 5px;
+  }
+  
+  .login {
+    color: #fff;
+    background-color: #433add;
+    border-radius: 20px;
+    border: 2px solid #433add;
+    font-size: 15px;
+    width: 80px;
+    color: #433add;
+    transition: all .2s ease-in-out; 
+  }
+
+  .headerbtn:hover {
+    background-color:transparent;
+    border-radius: 50px;
+    transform: scale(1.05); 
+    box-shadow: 0px 0px 15px #4f46ed;
+    
+  }
+
+  .login:hover {
+    background-color:transparent;
+    border-radius: 50px;
+    transform: scale(1.05); 
+  }
