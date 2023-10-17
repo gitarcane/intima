@@ -1,4 +1,7 @@
 html, body {
+height: 100%;
+width: 100%;
+min-height: 100%;
 font-family: Helvetica;
 font-size:32px;
 font-weight: bold;
@@ -6,6 +9,13 @@ color: #fff;
 background-color:#09090d;
 scroll-behavior: smooth;
 overflow-x: hidden; /* Hide horizontal scrollbar */
+-webkit-touch-callout: none; /* iOS Safari */
+-webkit-user-select: none; /* Safari */
+ -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                              supported by Chrome, Edge, Opera and Firefox */
 
 }
 
@@ -48,7 +58,8 @@ overflow-x: hidden; /* Hide horizontal scrollbar */
 
 }
 .subtitle {
-    color:#fff;
+    color:rgba(255,255,255,0.2);
+    font-weight: 400;
     font-size:24px;
     font-weight: normal;
 }
@@ -125,24 +136,29 @@ overflow-x: hidden; /* Hide horizontal scrollbar */
   /* Create three equal columns that floats next to each other */
   
 .column {
-    float: left;
-    width: 100%;
+  float:left;
+    width: calc(100% - 8vw);
     padding: 10px;
-    max-width:500px; 
+    max-width:400px; 
     height:600px;
     padding-top:50px; 
     padding-bottom: 50px; 
     border-radius: 25px;
     margin: 10px;
-    background-color:rgb(24, 24, 30, 0.8);
+    background-color:rgb(24, 24, 30, 1);
     border-radius: 25px;
     border: 2px solid #121212;
+    left: 50%;
+
   }
 
 .cont {
-    position: relative;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    max-width: 1335px;
     left: 50%;
-    transform: translate(-42.5%);
+    transform: translate(calc(-50%));
   }
 
   
@@ -169,4 +185,21 @@ overflow-x: hidden; /* Hide horizontal scrollbar */
     width: var(--width);
     border-bottom: var(--borderWidth) solid var(--borderColor);
     border-right: var(--borderWidth) solid var(--borderColor);
+  }
+
+
+  .footer {
+    position: absolute;  
+    animation-timing-function: linear;
+    animation: cycle 3s infinite;
+    min-width: 100%;
+    height: 0px;
+    border-radius: 25px;
+    bottom: -200px;
+  }
+  @keyframes cycle {
+    
+    0%  {  border: 2px solid #4f46ed; box-shadow: #4f46ed 0px 0px 15px;}
+    50% {  border: 2px solid rgba(255,255,255,0.1); box-shadow: #4f46ed 0px 0px 3px;}
+    100%  { border: 2px solid #4f46ed; box-shadow: #4f46ed 0px 0px 15px; }
   }
